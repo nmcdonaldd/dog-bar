@@ -15,7 +15,6 @@ struct PopoverView: View {
                 .task { await viewModel.fetchPhotoLocation() }
         } else {
             AsyncImage(url: viewModel.photoLocation)
-
         }
     }
 }
