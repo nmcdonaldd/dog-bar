@@ -8,19 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		AC8D38DA2732361F00A6B2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38D92732361F00A6B2CE /* AppDelegate.swift */; };
-		AC8D38DC2732361F00A6B2CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38DB2732361F00A6B2CE /* ViewController.swift */; };
 		AC8D38DE2732361F00A6B2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8D38DD2732361F00A6B2CE /* Assets.xcassets */; };
 		AC8D38E12732361F00A6B2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8D38DF2732361F00A6B2CE /* Main.storyboard */; };
+		AC8D38EC2732535C00A6B2CE /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38EB2732535C00A6B2CE /* StatusBarItem.swift */; };
+		AC8D38EE2732626A00A6B2CE /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38ED2732626A00A6B2CE /* StatusBar.swift */; };
+		AC8D38F12734F61800A6B2CE /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38F02734F61800A6B2CE /* PopoverView.swift */; };
+		AC8D38F3273504E100A6B2CE /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38F2273504E100A6B2CE /* PopoverViewModel.swift */; };
+		AC8D38F62735093F00A6B2CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38F52735093F00A6B2CE /* Endpoint.swift */; };
+		AC8D38F827350FFF00A6B2CE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D38F727350FFF00A6B2CE /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC8D38D62732361F00A6B2CE /* dog-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dog-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8D38D92732361F00A6B2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC8D38DB2732361F00A6B2CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC8D38DD2732361F00A6B2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC8D38E02732361F00A6B2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC8D38E22732361F00A6B2CE /* dog_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dog_bar.entitlements; sourceTree = "<group>"; };
 		AC8D38E82732364B00A6B2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8D38EB2732535C00A6B2CE /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
+		AC8D38ED2732626A00A6B2CE /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		AC8D38F02734F61800A6B2CE /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		AC8D38F2273504E100A6B2CE /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
+		AC8D38F52735093F00A6B2CE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AC8D38F727350FFF00A6B2CE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +63,43 @@
 		AC8D38D82732361F00A6B2CE /* dog-bar */ = {
 			isa = PBXGroup;
 			children = (
+				AC8D38F42735093500A6B2CE /* API */,
 				AC8D38D92732361F00A6B2CE /* AppDelegate.swift */,
-				AC8D38DB2732361F00A6B2CE /* ViewController.swift */,
+				AC8D38EA2732534B00A6B2CE /* Status Bar */,
 				AC8D38DD2732361F00A6B2CE /* Assets.xcassets */,
 				AC8D38DF2732361F00A6B2CE /* Main.storyboard */,
 				AC8D38E22732361F00A6B2CE /* dog_bar.entitlements */,
 				AC8D38E82732364B00A6B2CE /* Info.plist */,
 			);
 			path = "dog-bar";
+			sourceTree = "<group>";
+		};
+		AC8D38EA2732534B00A6B2CE /* Status Bar */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D38EF2734F5FA00A6B2CE /* Popover */,
+				AC8D38EB2732535C00A6B2CE /* StatusBarItem.swift */,
+				AC8D38ED2732626A00A6B2CE /* StatusBar.swift */,
+			);
+			path = "Status Bar";
+			sourceTree = "<group>";
+		};
+		AC8D38EF2734F5FA00A6B2CE /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D38F02734F61800A6B2CE /* PopoverView.swift */,
+				AC8D38F2273504E100A6B2CE /* PopoverViewModel.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		AC8D38F42735093500A6B2CE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D38F52735093F00A6B2CE /* Endpoint.swift */,
+				AC8D38F727350FFF00A6B2CE /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC8D38DC2732361F00A6B2CE /* ViewController.swift in Sources */,
+				AC8D38F3273504E100A6B2CE /* PopoverViewModel.swift in Sources */,
+				AC8D38EE2732626A00A6B2CE /* StatusBar.swift in Sources */,
 				AC8D38DA2732361F00A6B2CE /* AppDelegate.swift in Sources */,
+				AC8D38F12734F61800A6B2CE /* PopoverView.swift in Sources */,
+				AC8D38F62735093F00A6B2CE /* Endpoint.swift in Sources */,
+				AC8D38EC2732535C00A6B2CE /* StatusBarItem.swift in Sources */,
+				AC8D38F827350FFF00A6B2CE /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
