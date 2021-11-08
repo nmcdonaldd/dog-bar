@@ -9,18 +9,21 @@ import SwiftUI
 
 struct PopoverView: View {
     @StateObject var viewModel = PopoverViewModel()
+    
     var body: some View {
         if viewModel.photoLocation == nil {
             ProgressView()
+                .frame(width: 150, height: 150)
                 .task { await viewModel.fetchPhotoLocation() }
         } else {
-            AsyncImage(url: viewModel.photoLocation)
-        }
-    }
-}
+            AsyncImage(
+                url: viewModel.photoLocation) { image in
+                    return image
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: 150, height: 150)
+                }
 
-struct PopoverView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopoverView()
+        }
     }
 }

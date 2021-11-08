@@ -16,11 +16,7 @@ class API {
         return await get(type: type, url: endpoint.url)
     }
     
-    func get<T>(
-        type: T.Type,
-        url: URL)
-    async -> T?
-    where T: Decodable {
+    func get<T>(type: T.Type, url: URL) async -> T? where T: Decodable {
         return await get(type: type, request: URLRequest(url: url))
     }
     
@@ -29,18 +25,16 @@ class API {
         request: URLRequest)
     async -> T?
     where T: Decodable {
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+        guard let (data, response) =
+                try? await URLSession.shared.data(for: request) else {
+                    return nil
+                }
             
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200 else {
                 return nil
             }
             
-            return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            print(error)
-            return nil
-        }
+            return try? JSONDecoder().decode(T.self, from: data)
     }
 }

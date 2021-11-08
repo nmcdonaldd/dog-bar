@@ -10,14 +10,13 @@ import SwiftUI
 
 class StatusBarItem {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let popover = NSPopover()
+    private var popover: NSPopover?
     
     init() {
         initStatusItem()
     }
     
     private func initStatusItem() {
-        popover.behavior = .transient
         statusItem.button?.image = NSImage(
             systemSymbolName: "pawprint.fill",
             accessibilityDescription: nil)
@@ -27,16 +26,18 @@ class StatusBarItem {
     }
     
     @objc private func onButtonClick() {
+        popover = NSPopover()
+        popover!.behavior = .transient
         NSApplication.shared.activate(ignoringOtherApps: true)
-        if popover.isShown {
-            popover.close()
+        if popover!.isShown {
+            popover!.close()
         } else {
             guard let button = statusItem.button else { return }
              
             // Set the view and placement of view
-            popover.contentViewController = NSHostingController<PopoverView>(
+            popover!.contentViewController = NSHostingController<PopoverView>(
                 rootView: PopoverView())
-            popover.show(
+            popover!.show(
                 relativeTo: button.bounds,
                 of: button,
                 preferredEdge: .minY)
