@@ -26,15 +26,16 @@ class API {
     async -> T?
     where T: Decodable {
         guard let (data, response) =
-                try? await URLSession.shared.data(for: request) else {
-                    return nil
-                }
+                try? await URLSession.shared.data(for: request)
+        else {
+            return nil
+        }
             
-            guard let response = response as? HTTPURLResponse,
-                  response.statusCode == 200 else {
-                return nil
-            }
-            
-            return try? JSONDecoder().decode(T.self, from: data)
+        guard let response = response as? HTTPURLResponse,
+              response.statusCode == 200 else {
+            return nil
+        }
+        
+        return try? JSONDecoder().decode(T.self, from: data)
     }
 }

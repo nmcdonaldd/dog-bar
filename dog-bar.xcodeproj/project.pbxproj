@@ -63,8 +63,8 @@
 		AC8D38D82732361F00A6B2CE /* dog-bar */ = {
 			isa = PBXGroup;
 			children = (
-				AC8D38F42735093500A6B2CE /* API */,
 				AC8D38D92732361F00A6B2CE /* AppDelegate.swift */,
+				AC8D38F42735093500A6B2CE /* API */,
 				AC8D38EA2732534B00A6B2CE /* Status Bar */,
 				AC8D38DD2732361F00A6B2CE /* Assets.xcassets */,
 				AC8D38DF2732361F00A6B2CE /* Main.storyboard */,
