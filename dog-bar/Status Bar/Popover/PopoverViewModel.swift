@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import nickdonald_boilerplate
 
 @MainActor
 class PopoverViewModel: ObservableObject {
@@ -22,7 +23,7 @@ class PopoverViewModel: ObservableObject {
     private func fetch() async -> URL? {
         let fetchResponse = await api.get(
             type: RandomDogFetchResponse.self,
-            endpoint: Endpoint.FETCH_RANDOM_IMAGE)
+            endpoint: Endpoint.fetchRandomImage)
         
         guard let url = fetchResponse?.message else {
             return nil

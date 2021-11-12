@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "nickdonald-boilerplate",
+        "repositoryURL": "https://github.com/nmcdonaldd/nickdonald-boilerplate.git",
+        "state": {
+          "branch": "main",
+          "revision": "e65a5bb38b30e2267ddb20d53026adf659b3bdb7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

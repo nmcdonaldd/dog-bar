@@ -26,9 +26,10 @@ class StatusBarItem {
     }
     
     @objc private func onButtonClick() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        
         popover = NSPopover()
         popover!.behavior = .transient
-        NSApplication.shared.activate(ignoringOtherApps: true)
         if popover!.isShown {
             popover!.close()
         } else {
@@ -37,10 +38,7 @@ class StatusBarItem {
             // Set the view and placement of view
             popover!.contentViewController = NSHostingController<PopoverView>(
                 rootView: PopoverView())
-            popover!.show(
-                relativeTo: button.bounds,
-                of: button,
-                preferredEdge: .minY)
+            popover!.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         }
     }
 }
